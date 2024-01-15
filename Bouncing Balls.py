@@ -1,7 +1,5 @@
 def bouncing_ball(h, bounce, window):
-    if (h <= 0 or bounce <= 0 or bounce >= 1 or window > h):
-        return -1
-    else:
+    if (h > 0 and bounce > 0 and bounce < 1 and window < h):
         times = 0
         while h > window:
             times += 1
@@ -9,6 +7,8 @@ def bouncing_ball(h, bounce, window):
             if h > window:
                 times += 1
         return times
+    else:
+        return -1
 
 import pytest
 
